@@ -17,14 +17,14 @@ IF NOT EXIST cygwin-setup.exe (
 )
  
 REM -- Configure our paths
-SET SITE=http://cygwin.mirrors.pair.com/
+SET SITE=http://mirrors.ustc.edu.cn
 SET LOCALDIR=%CD%
-SET ROOTDIR=C:/cygwin
+SET ROOTDIR=C:/cygwin64
  
 REM -- These are the packages we will install (in addition to the default packages)
-SET PACKAGES=mintty,wget,ctags,diffutils,git,git-completion,git-svn,stgit,mercurial
+SET PACKAGES=xorg-server
 REM -- These are necessary for apt-cyg install, do not change. Any duplicates will be ignored.
-SET PACKAGES=%PACKAGES%,wget,tar,gawk,bzip2,subversion
+SET PACKAGES=%PACKAGES%,xwinclip
  
 REM -- More info on command line options at: https://cygwin.com/faq/faq.html#faq.setup.cli
 REM -- Do it!
@@ -42,13 +42,13 @@ ECHO cygwin installation updated
 ECHO  - %PACKAGES%
 ECHO.
 
-ECHO apt-cyg installing.
-set PATH=%ROOTDIR%/bin;%PATH%
-%ROOTDIR%/bin/bash.exe -c 'svn --force export http://apt-cyg.googlecode.com/svn/trunk/ /bin/'
-%ROOTDIR%/bin/bash.exe -c 'chmod +x /bin/apt-cyg'
-ECHO apt-cyg installed if it says somin like "A    /bin" and "A   /bin/apt-cyg" and "Exported revision 18" or some other number.
+REM ECHO apt-cyg installing.
+REM set PATH=%ROOTDIR%/bin;%PATH%
+REM %ROOTDIR%/bin/bash.exe -c 'svn --force export http://apt-cyg.googlecode.com/svn/trunk/ /bin/'
+REM %ROOTDIR%/bin/bash.exe -c 'chmod +x /bin/apt-cyg'
+REM ECHO apt-cyg installed if it says somin like "A    /bin" and "A   /bin/apt-cyg" and "Exported revision 18" or some other number.
 
 ENDLOCAL
  
-PAUSE
+REM PAUSE
 EXIT /B 0
