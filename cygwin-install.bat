@@ -17,9 +17,9 @@ IF NOT EXIST cygwin-setup.exe (
 )
  
 REM -- Configure our paths
-SET SITE=http://mirrors.ustc.edu.cn
+SET SITE=https://mirrors.aliyun.com/cygwin
 SET LOCALDIR=%CD%
-SET ROOTDIR=C:/cygwin64
+SET ROOTDIR=C:\\cygwin64
  
 REM -- These are the packages we will install (in addition to the default packages)
 SET PACKAGES=xorg-server
