@@ -24,7 +24,7 @@ SET ROOTDIR=C:\\cygwin64
 REM -- These are the packages we will install (in addition to the default packages)
 SET PACKAGES=xorg-server
 REM -- These are necessary for apt-cyg install, do not change. Any duplicates will be ignored.
-SET PACKAGES=%PACKAGES%,xwinclip
+SET PACKAGES=%PACKAGES%,xwinclip,run
  
 REM -- More info on command line options at: https://cygwin.com/faq/faq.html#faq.setup.cli
 REM -- Do it!
