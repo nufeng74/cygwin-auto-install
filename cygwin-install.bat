@@ -17,12 +17,15 @@ IF NOT EXIST cygwin-setup.exe (
 )
  
 REM -- Configure our paths
-#SET SITE=https://mirrors.aliyun.com/cygwin
-#SET SITE=http://mirrors.ucst.edu.cn/cygwin
+REM SET SITE=https://mirrors.aliyun.com/cygwin
+REM SET SITE=http://mirrors.ucst.edu.cn/cygwin
 SET SITE=http://mirrors.163.com/cygwin
 SET LOCALDIR=%CD%
 SET ROOTDIR=C:\\cygwin64
- 
+rem SET ROOTDIR=\\\wsl.localhost\\Ubuntu\\opt\\cygwin64
+IF NOT "%1" == "" (
+	SET ROOTDIR=%1
+)
 REM -- These are the packages we will install (in addition to the default packages)
 SET PACKAGES=xorg-server
 REM -- These are necessary for apt-cyg install, do not change. Any duplicates will be ignored.
